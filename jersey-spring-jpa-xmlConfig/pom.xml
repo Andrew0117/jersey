@@ -17,6 +17,9 @@
         <joda-time.version>2.3</joda-time.version>
         <log4j.version>1.2.17</log4j.version>
         <mail.version>1.4.1</mail.version>
+        <jersey>1.19.3</jersey>
+        <org.codehaus.jackson>1.9.13</org.codehaus.jackson>
+        <javax.servlet>4.0.1</javax.servlet>
     </properties>
     <build>
         <finalName>jersey-spring-jpa</finalName>
@@ -150,12 +153,12 @@
         <dependency>
             <groupId>com.sun.jersey</groupId>
             <artifactId>jersey-bundle</artifactId>
-            <version>1.19.3</version>
+            <version>${jersey}</version>
         </dependency>
         <dependency>
             <groupId>com.sun.jersey.contribs</groupId>
             <artifactId>jersey-spring</artifactId>
-            <version>1.19.3</version>
+            <version>${jersey}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework</groupId>
@@ -194,27 +197,27 @@
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.10</version>
+            <version>${org.codehaus.jackson}</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-core-asl</artifactId>
-            <version>1.9.10</version>
+            <version>${org.codehaus.jackson}</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-xc</artifactId>
-            <version>1.9.10</version>
+            <version>${org.codehaus.jackson}</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-jaxrs</artifactId>
-            <version>1.9.10</version>
+            <version>${org.codehaus.jackson}</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <version>${javax.servlet}</version>
             <scope>provided</scope>
         </dependency>
 
