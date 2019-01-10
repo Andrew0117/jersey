@@ -10,7 +10,6 @@
     <properties>
         <springframework.version>5.0.8.RELEASE</springframework.version>
         <spring.boot>2.1.0.RELEASE</spring.boot>
-        <jackson>2.9.7</jackson>
         <hibernate.version>5.3.6.Final</hibernate.version>
         <org.hibernate.validator>6.0.13.Final</org.hibernate.validator>
         <mariadb>2.2.2</mariadb>
@@ -93,23 +92,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
             <version>${springframework.version}</version>
-        </dependency>
-
-        <!-- jackson dependencies -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>${jackson}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>${jackson}</version>
         </dependency>
 
         <!-- Hibernate -->

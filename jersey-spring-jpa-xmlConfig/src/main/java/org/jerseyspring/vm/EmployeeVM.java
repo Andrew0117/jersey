@@ -1,7 +1,11 @@
 package org.jerseyspring.vm;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.jerseyspring.entity.Employee;
+import org.jerseyspring.serial.InstantDeserializer;
+import org.jerseyspring.serial.InstantSerializer;
 import org.jerseyspring.vm.interfaces.VMInterface;
 
 import javax.validation.constraints.Size;
@@ -20,6 +24,8 @@ public class EmployeeVM implements VMInterface {
 
     private Integer age;
 
+    @JsonSerialize(using = InstantSerializer.class)
+    @JsonDeserialize(using = InstantDeserializer.class)
     private Instant date;
 
     private Set<DepartmentVM> departmentsVM;
@@ -27,6 +33,7 @@ public class EmployeeVM implements VMInterface {
     public EmployeeVM() {
     }
 
+    @JsonIgnore
     public EmployeeVM(Employee employee) {
         this.id = employee.getId();
         this.name = employee.getName();

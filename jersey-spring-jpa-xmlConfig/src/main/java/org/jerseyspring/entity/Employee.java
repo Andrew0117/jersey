@@ -1,7 +1,5 @@
 package org.jerseyspring.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
@@ -32,7 +30,6 @@ public class Employee implements Serializable {
     @Column(name = "cDATE", nullable = false, columnDefinition = "TIMESTAMP")
     private Instant date;
 
-    @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                     CascadeType.PERSIST,

@@ -1,6 +1,6 @@
 package org.jerseyspring.vm;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.jerseyspring.entity.Department;
 import org.jerseyspring.entity.enumaration.DepartmentEnum;
 import org.jerseyspring.vm.interfaces.VMInterface;

@@ -14,6 +14,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -26,6 +27,7 @@ import java.util.stream.Collectors;
  */
 @Service(value = "employeeService")
 @Scope(value = "singleton")
+@Transactional
 public class EmployeeService implements EmployeeInterface<EmployeeVM> {
 
     private static final long serialVersionUID = -2609914157567100940L;
@@ -63,7 +65,7 @@ public class EmployeeService implements EmployeeInterface<EmployeeVM> {
                 }
             }
         }
-        Page<EmployeeVM> pageEmployeeVM = new PageImpl<EmployeeVM>(listEmployeeVM, pageable, listEmployeeVM.size());
+        Page<EmployeeVM> pageEmployeeVM = new PageImpl<>(listEmployeeVM, pageable, listEmployeeVM.size());
 
         return pageEmployeeVM;
     }
