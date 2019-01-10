@@ -9,13 +9,12 @@ import java.io.IOException;
 import java.time.Instant;
 
 /**
- * @author Berezhnov Andrey <Andrey at andrew.my@yahoo.com> on 10.01.2019 14:36
+ * @author Andrey <Andrey at andrew.my@yahoo.com> on 10.01.2019 14:36
  */
 public class InstantSerializer extends JsonSerializer<Instant> {
 
     @Override
-    public void serialize(Instant dateTime, JsonGenerator jg, SerializerProvider sp) throws IOException, JsonProcessingException {
-        /*Instant instant = dateTime.toInstant(ZoneOffset.UTC);*/
-        jg.writeString(dateTime.toString() /*DateTimeFormatter.ISO_INSTANT.format(instant)*/);
+    public void serialize(Instant instant, JsonGenerator jg, SerializerProvider sp) throws IOException, JsonProcessingException {
+        jg.writeString(instant.toString());
     }
 }

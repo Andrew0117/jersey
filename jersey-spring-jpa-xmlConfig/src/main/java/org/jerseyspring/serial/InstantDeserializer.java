@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.time.Instant;
 
 /**
- * @author Berezhnov Andrey <Andrey at andrew.my@yahoo.com> on 10.01.2019 14:32
+ * @author Andrey <Andrey at andrew.my@yahoo.com> on 10.01.2019 14:32
  */
 public class InstantDeserializer extends JsonDeserializer<Instant> {
 
@@ -19,9 +19,9 @@ public class InstantDeserializer extends JsonDeserializer<Instant> {
     public Instant deserialize(JsonParser jp, DeserializationContext dc) throws IOException, JsonProcessingException {
         ObjectCodec codec = jp.getCodec();
         TextNode node = (TextNode)codec.readTree(jp);
-        String dateString = node.getTextValue();//textValue();
+        String dateString = node.getTextValue();
         Instant instant = Instant.parse(dateString);
-        //Instant dateTime = Instant.ofInstant(instant, ZoneId.systemDefault());
-        return instant;// dateTime;
+
+        return instant;
     }
 }
